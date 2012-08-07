@@ -1,4 +1,9 @@
-
+<p ng-show="contacts.length == 0">There are no contacts here!</p>
 <ul>
-  <li ng-repeat="contact in contacts">{{contact.name}}</li>
+  <li ng-repeat="(id, contact) in contacts">
+    <a href="#/info/{{id}}">{{contact.name}}</a>
+    [<a href="#/edit/{{id}}">edit</a>]
+    [<a href="#/remove/{{id}}">remove</a>]
+  </li>
 </ul>
+<a href="#/add">Add a New Contact</a>
